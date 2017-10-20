@@ -7,6 +7,9 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.4.0.282" />
     <PackageReference Include="Prism.Autofac.Forms" Version="7.0.0.167-ci" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.2.20" />
+    <PackageReference Include="Microsoft.Composition" Version="1.0.31" />
+    <PackageReference Include="Octane.Xam.VideoPlayer" Version="1.2.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -14,37 +17,81 @@
     <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SchedulePage.xaml">
+    <EmbeddedResource Include="Views\MainTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MapPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainTabbedPage.xaml">
+    <EmbeddedResource Include="Views\SchedulePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VideoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GalleryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VideoPlayerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetworkPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VideoPlayerMacPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="App.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\MainPage.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\SchedulePage.xaml.cs">
+    <Compile Remove="Views\MainPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\MainTabbedPage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\MapPage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\MainTabbedPage.xaml.cs">
+    <Compile Update="Views\SchedulePage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
+    <Compile Update="App.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\VideoPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\GalleryPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\VideoPlayerPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NetworkPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\VideoPlayerMacPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\MainPage.xaml" />
+    <None Remove="Views\MainTabbedPage.xaml" />
+    <None Remove="Views\MapPage.xaml" />
+    <None Remove="Views\SchedulePage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVPPrismApp.Lib\MVPPrismApp.Lib.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="DLToolkit.Forms.Controls.FlowListView">
+      <HintPath>..\packages\lib\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

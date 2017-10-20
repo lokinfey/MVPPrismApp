@@ -1,10 +1,17 @@
 ﻿using System;
 namespace MVPPrismApp.Lib.Utils
 {
-    public class URL
+    public static class URL
     {
-        public URL()
-        {
-        }
+        public static string BaseURL = "http://course.gdou.com/mvp/api/";
+
+        public static string VIDEOURL = BaseURL + "getvideolist";
+
+        public static string SCHDULEURL = BaseURL + "getschudlelist";
+
+        public static string GALLERYURL = BaseURL + "getnewslist";
+
+
     }
+
 }

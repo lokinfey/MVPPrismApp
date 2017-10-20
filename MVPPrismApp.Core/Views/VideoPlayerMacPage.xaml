@@ -1,5 +1,20 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MVPPrismApp.Core.Views.VideoPlayerMacPage">
-	<ContentPage.Content>
-	</ContentPage.Content>
+<Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="630" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <WebView x:Name="player" Source="http://218.19.141.115/livevod/cxmobile/01.mp4" Grid.Row="0"    />  
+        <StackLayout Grid.Row="1">
+          <Button  x:Name="btnClose" BorderColor="Transparent"  BackgroundColor="Transparent"  VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Clicked="Handle_Clicked" Image="close.png" TextColor="Blue" WidthRequest="100" HeightRequest="100" BorderWidth="0">    
+
+    <Button.BorderRadius> 
+        <OnPlatform x:TypeArguments="x:Int32">
+            <OnPlatform.Android>0</OnPlatform.Android>
+        </OnPlatform>
+    </Button.BorderRadius>
+          </Button>     
+        </StackLayout>
+</Grid>
 </ContentPage>

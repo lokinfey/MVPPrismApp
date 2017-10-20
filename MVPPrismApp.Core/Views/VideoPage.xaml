@@ -1,5 +1,33 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MVPPrismApp.Core.Views.VideoPage">
-	<ContentPage.Content>
-	</ContentPage.Content>
-</ContentPage>
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:MVPPrismApp.Core.Utils"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="MVPPrismApp.Core.Views.VideoPage"
+             Title="{Binding Title}" Icon="video.png">
+    <ContentPage.Content>
+         <ListView x:Name="VideoListView" RowHeight="120"  HasUnevenRows="false" ItemsSource="{Binding Path=VideoList}" ItemSelected="Handle_ItemSelected"  > 
+            <ListView.ItemTemplate>
+                      <DataTemplate>
+                       <ViewCell  >
+                         <ContentView Padding="4" > 
+                            <StackLayout Orientation="Horizontal">
+                               <ffimageloading:CachedImage Source="{Binding VideoImg}" WidthRequest="160" HeightRequest="90" DownsampleToViewSize="true"  />
+                               <StackLayout Padding="4">
+                                    <Label Text="{Binding VideoName}" FontSize="18" Margin="2,10" />
+                                    <StackLayout Orientation="Horizontal" Padding="2">
+
+                                       <Label Text="{Binding VideoVendor}" FontSize="14"/><Label Text="{Binding VideoDate}" FontSize="14"/>
+                                    </StackLayout>
+                               </StackLayout>   
+                            </StackLayout>
+                         </ContentView>
+                       </ViewCell>
+                      </DataTemplate>
+                </ListView.ItemTemplate>
+         </ListView>
+    </ContentPage.Content>
+</local:BaseContentPage>

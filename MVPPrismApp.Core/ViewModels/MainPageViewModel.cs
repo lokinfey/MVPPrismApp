@@ -4,12 +4,14 @@ using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using MVPPrismApp.Lib.Services;
 
 namespace MVPPrismApp.Core.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
+
+
         public MainPageViewModel(INavigationService navigationService, IApplicationStore applicationStore,
                          IDeviceService deviceService)
                       : base(navigationService, applicationStore, deviceService)
@@ -27,17 +29,18 @@ namespace MVPPrismApp.Core.ViewModels
             // TODO: Handle any final tasks before you navigate away
         }
 
-        public override void OnNavigatedTo(NavigationParameters parameters)
+        public override  void OnNavigatedTo(NavigationParameters parameters)
         {
-            switch (parameters.GetNavigationMode())
-            {
-                case NavigationMode.Back:
-                    // TODO: Handle any tasks that should occur only when navigated back to
-                    break;
-                case NavigationMode.New:
-                    // TODO: Handle any tasks that should occur only when navigated to for the first time
-                    break;
-            }
+
+            //switch (parameters.GetNavigationMode())
+            //{
+            //    case NavigationMode.Back:
+            //        // TODO: Handle any tasks that should occur only when navigated back to
+            //        break;
+            //    case NavigationMode.New:
+            //        // TODO: Handle any tasks that should occur only when navigated to for the first time
+            //        break;
+            //}
 
             // TODO: Handle any tasks that should be done every time OnNavigatedTo is triggered
         }

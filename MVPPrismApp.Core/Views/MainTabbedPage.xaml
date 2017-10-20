@@ -6,7 +6,11 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core" 
              x:Class="MVPPrismApp.Core.Views.MainTabbedPage"
-             Title="{Binding Title}">
-    <local:SchedulePage />
-    <local:MapPage />
+             >
+     <TabbedPage.Children>
+        <local:SchedulePage  />
+        <local:MapPage  />
+        <local:GalleryPage />
+        <local:VideoPage  />
+     </TabbedPage.Children>
 </TabbedPage>

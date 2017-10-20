@@ -3,8 +3,6 @@ namespace MVPPrismApp.Lib.Models
 {
     public class LocationItem
     {
-        public LocationItem()
-        {
-        }
+        public string ImgURL { get; set; }
     }
 }

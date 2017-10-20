@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -83,19 +84,73 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MVPPrismApp\MVPPrismApp.csproj">
-      <Project>{482C0411-C6B1-4963-80EE-A4B94A520520}</Project>
-      <Name>MVPPrismApp</Name>
-    </ProjectReference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.282\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.282\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.282\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.282\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.4.6.0\lib\netstandard1.1\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism">
+      <HintPath>..\packages\Prism.Core.7.0.0.163-ci\lib\netstandard1.0\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Forms">
+      <HintPath>..\packages\Prism.Forms.7.0.0.163-ci\lib\netstandard1.0\Prism.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Autofac.Forms">
+      <HintPath>..\packages\Prism.Autofac.Forms.7.0.0.163-ci\lib\netstandard1.1\Prism.Autofac.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.4\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.20\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.20\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.20\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Touch">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.20\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Octane.Xam.VideoPlayer">
+      <HintPath>..\packages\Octane.Xam.VideoPlayer.1.2.3.0\lib\Xamarin.iOS10\Octane.Xam.VideoPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Octane.Xam.VideoPlayer.iOS">
+      <HintPath>..\packages\Octane.Xam.VideoPlayer.1.2.3.0\lib\Xamarin.iOS10\Octane.Xam.VideoPlayer.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\launchimage_1242_2208.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\launchimage_750_1334.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\launchimage_640_960.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\launchimage_640_1136.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-ios-58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-ios-87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-ios-80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-ios-120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appicon-ios-180.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Renders\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -103,10 +158,49 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renders\SelectedTabPageRenderer.cs" />
+    <Compile Include="Renders\CustomListViewCellRenderer.cs" />
+    <Compile Include="Utils\NetworkConnection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVPPrismApp.Core\MVPPrismApp.Core.csproj">
+      <Project>{3F295218-35E3-4BA7-BDAA-C3EE837260B8}</Project>
+      <Name>MVPPrismApp.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bjlocation.png" />
+    <BundleResource Include="Resources\close.png" />
+    <BundleResource Include="Resources\location_selected.png" />
+    <BundleResource Include="Resources\location_selected%402x.png" />
+    <BundleResource Include="Resources\location.png" />
+    <BundleResource Include="Resources\location%402x.png" />
+    <BundleResource Include="Resources\location1.png" />
+    <BundleResource Include="Resources\location2.png" />
+    <BundleResource Include="Resources\location3.png" />
+    <BundleResource Include="Resources\map2.png" />
+    <BundleResource Include="Resources\news_selected.png" />
+    <BundleResource Include="Resources\news_selected%402x.png" />
+    <BundleResource Include="Resources\news.png" />
+    <BundleResource Include="Resources\news%402x.png" />
+    <BundleResource Include="Resources\schedule_selected.png" />
+    <BundleResource Include="Resources\schedule_selected%402x.png" />
+    <BundleResource Include="Resources\schedule.png" />
+    <BundleResource Include="Resources\schedule%402x.png" />
+    <BundleResource Include="Resources\video_selected.png" />
+    <BundleResource Include="Resources\video_selected%402x.png" />
+    <BundleResource Include="Resources\video.png" />
+    <BundleResource Include="Resources\video%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets')" />
 </Project>

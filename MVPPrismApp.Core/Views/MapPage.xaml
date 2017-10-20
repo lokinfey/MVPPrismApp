@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <local:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
              xmlns:local="clr-namespace:MVPPrismApp.Core.Utils"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core" 
              x:Class="MVPPrismApp.Core.Views.MapPage"
-              Title="{Binding Title}">
-	<ContentPage.Content>
-          <Label Text="MapPage" VerticalOptions="Center" HorizontalOptions="Center" />
-	</ContentPage.Content>
+              Title="{Binding Title}" Icon="location.png">
+    <ContentPage.Content>       
+
+       <ffimageloading:CachedImage Aspect="AspectFill" Source= "location1.png"/>
+
+    </ContentPage.Content>
 </local:BaseContentPage>

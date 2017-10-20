@@ -6,6 +6,10 @@ using Prism.Autofac;
 using Prism.Logging;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MVPPrismApp.Lib.Services;
+
+using DLToolkit.Forms.Controls;
+using MVPPrismApp.Core.Utils;
 
 namespace MVPPrismApp.Core
 {
@@ -31,15 +35,51 @@ namespace MVPPrismApp.Core
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainTabbedPage");
+
+            FlowListView.Init();
+
+
+            var networkConnection = DependencyService.Get<INetworkConnection>();
+            networkConnection.CheckNetworkConnection();
+            if (networkConnection.IsConnected == false)
+            {
+
+                await NavigationService.NavigateAsync("MVPPage/NetworkPage");
+                //Load();
+
+            }
+            else
+            {
+                await NavigationService.NavigateAsync("MVPPage/MainTabbedPage");
+
+            }
+
+           // NavigationPage
+        }
+
+
+        async void Load()
+        {
+            //Device.BeginInvokeOnMainThread(async () =>
+            //{
+
+               // var page = new ContentPage();
+              //  DisplayAlert("网络加载出错", "网络加载出错，请打开你的蜂窝网络或链接有效的无线网络", "关闭");
+
+            //});
+            //await DisplayAlert("1", "1", "1");
         }
 
         protected override void RegisterTypes()
         {
-            Builder.RegisterTypeForNavigation<NavigationPage>();
+            Builder.RegisterTypeForNavigation<MVPPage>();
             Builder.RegisterTypeForNavigation<MainTabbedPage>();
             Builder.RegisterTypeForNavigation<MapPage>();
             Builder.RegisterTypeForNavigation<SchedulePage>();
+            Builder.RegisterTypeForNavigation<VideoPage>();
+            Builder.RegisterTypeForNavigation<GalleryPage>();
+            Builder.RegisterTypeForNavigation<NetworkPage>();
+            Builder.RegisterType<APIService>().As<IAPIService>();
         }
 
         protected override void OnStart()

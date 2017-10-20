@@ -3,8 +3,8 @@ namespace MVPPrismApp.Lib.Models
 {
     public class NewsResultItem
     {
-        public NewsResultItem()
-        {
-        }
+        public string NewsTitle { get; set; }
+
+        public string PhotoURL { get; set; }
     }
 }

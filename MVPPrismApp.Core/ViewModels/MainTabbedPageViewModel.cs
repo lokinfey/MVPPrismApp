@@ -13,7 +13,8 @@ namespace MVPPrismApp.Core.ViewModels
                          IDeviceService deviceService)
                       : base(navigationService, applicationStore, deviceService)
         {
-            Title = "Map Page";
+            Title = "2017年微软最有价值专家中国峰会";
+
         }
 
         public override void OnNavigatingTo(NavigationParameters parameters)
