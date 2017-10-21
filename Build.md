@@ -101,6 +101,8 @@ Coz github version was built at Windows . so you need to edit MVPPrismApp.Core.c
 </Project>
 
 
+
+
 #Windows Build
 
 if you build only from Github , all is okay . But you change the build on macOS , movie it to Windows . you need to remove all for these in MVPPrismApp.Core.csproj
