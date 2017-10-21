@@ -15,5 +15,8 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\backup\Debug\Debug\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

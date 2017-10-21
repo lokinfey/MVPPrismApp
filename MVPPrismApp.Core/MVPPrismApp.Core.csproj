@@ -16,8 +16,41 @@
     <Folder Include="Views\" />
     <Folder Include="Utils\" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Views\MainPage.xaml.cs" />
+
+    <ItemGroup>
+    <EmbeddedResource Include="App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SchedulePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MapPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VideoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GalleryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VideoPlayerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetworkPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VideoPlayerMacPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetworkPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\MainTabbedPage.xaml.cs">
@@ -49,20 +82,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Views\MainPage.xaml" />
-    <None Remove="Views\MainTabbedPage.xaml" />
-    <None Remove="Views\MapPage.xaml" />
-    <None Remove="Views\SchedulePage.xaml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\MVPPrismApp.Lib\MVPPrismApp.Lib.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DLToolkit.Forms.Controls.FlowListView">
-      <HintPath>..\..\..\backup\DLToolkit.Forms.Controls-master\DLToolkit.Forms.Controls-master\FlowListView\DLToolkit.Forms.Controls.FlowListView\bin\Debug\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\backup\Debug\Debug\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="DLToolkit.Forms.Controls.FlowListView">
+      <HintPath>..\lib\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
