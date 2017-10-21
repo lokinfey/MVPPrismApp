@@ -30,7 +30,7 @@ namespace MVPPrismApp.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
 
-            FormsVideoPlayer.Init("6EA93319AABD13FBDAE0627E59874032F4242FB5");
+            FormsVideoPlayer.Init();
 
             CachedImageRenderer.Init();
 

@@ -18,7 +18,7 @@ namespace MVPPrismApp.iOS
             global::Xamarin.Forms.Forms.Init();
             CachedImageRenderer.Init();
 
-            FormsVideoPlayer.Init("F118B63AE568A8A047ED4CF467DA72DA89CDFD48");
+            FormsVideoPlayer.Init();
 
             var statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
 
