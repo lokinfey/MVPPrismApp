@@ -1,6 +1,6 @@
 ﻿using AppKit;
 
-namespace Mac
+namespace MVPPrismApp.Mac
 {
     static class MainClass
     {

@@ -42,5 +42,9 @@
 	<string>MVP峰会2017</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage-1.launchimage</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>CFBundleDisplayName</key>
+	<string>MVP峰会2017</string>
 </dict>
 </plist>

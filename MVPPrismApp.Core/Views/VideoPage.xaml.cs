@@ -13,17 +13,15 @@ namespace MVPPrismApp.Core.Views
             if (((ListView)sender).SelectedItem == null)
                 return;
             var item = e?.SelectedItem as VideoItem;
+            if (Xamarin.Forms.Device.OS == TargetPlatform.iOS || Xamarin.Forms.Device.OS == TargetPlatform.Android)
+                {
 
-#if __MOBILE__
+                await this.Navigation.PushModalAsync(new VideoPlayerPage(item.VideoURL));
 
-            await this.Navigation.PushModalAsync(new VideoPlayerPage(item.VideoURL));
 
-            #else
+            }
+            else
             await this.Navigation.PushModalAsync(new VideoPlayerMacPage(item.VideoURL));
-
-
-
-#endif
 
             ((ListView)sender).SelectedItem = null;
         }

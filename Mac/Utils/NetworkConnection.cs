@@ -1,12 +1,12 @@
 ﻿using System;
 using CoreFoundation;
-using Mac.Utils;
+using MVPPrismApp.Mac.Utils;
 using MVPPrismApp.Core.Utils;
 using SystemConfiguration;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(NetworkConnection))]
-namespace Mac.Utils
+namespace MVPPrismApp.Mac.Utils
 {
     public class NetworkConnection : INetworkConnection
     {

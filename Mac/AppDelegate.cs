@@ -9,7 +9,7 @@ using Prism.Autofac;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.MacOS;
 
-namespace Mac
+namespace MVPPrismApp.Mac
 {
     [Register("AppDelegate")]
     public class AppDelegate : FormsApplicationDelegate
